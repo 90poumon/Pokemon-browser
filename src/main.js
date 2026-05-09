@@ -39,4 +39,14 @@ function renderPokemon(data) {
 
   //render pokemon name
   pokemonName.textContent = data.name;
+
+  //render pokemon types using map to build a list
+  const types = data.types.map((type) => {
+    return `<li class="bg-slate-700 px-3 py-1 rounded capitalize">
+        ${type.type.name}
+      </li>`;
+  });
+
+  // add the types to the DOM
+  pokemonTypes.innerHTML = types.join("");
 }
