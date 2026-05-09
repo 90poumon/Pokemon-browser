@@ -25,7 +25,18 @@ async function getPokemon(id) {
 
     // log response data to the console
     console.log(data);
+
+    renderPokemon(data);
   } catch (error) {
     console.error("Error fetching pokemon:", error);
   }
+}
+
+// Function to render pokemon data to the DOM
+function renderPokemon(data) {
+  //render pokemon image
+  pokemonImage.src = data.sprites.front_default;
+
+  //render pokemon name
+  pokemonName.textContent = data.name;
 }
