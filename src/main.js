@@ -6,7 +6,7 @@ const pokemonTypes = document.querySelector("#pokemon-types");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 // Current pokemon ID
-const currentId = 1;
+let currentId = 1;
 
 // Async function to fetch pokemon
 async function getPokemon(id) {
