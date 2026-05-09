@@ -50,3 +50,27 @@ function renderPokemon(data) {
   // add the types to the DOM
   pokemonTypes.innerHTML = types.join("");
 }
+
+// add prev button
+prevBtn.addEventListener("click", () => {
+  //boundary check to prevent going below 1
+
+  if (currentId <= 1) {
+    return;
+  }
+  currentId--;
+  getPokemon(currentId);
+});
+
+// add next button
+nextBtn.addEventListener("click", () => {
+  // boundary check to prevent going above 1025
+  if (currentId >= 1025) {
+    return;
+  }
+  currentId++;
+  getPokemon(currentId);
+});
+
+//load the first pokemon on page load
+getPokemon(currentId);
